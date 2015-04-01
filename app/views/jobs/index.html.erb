@@ -13,13 +13,20 @@
   <div class="clearfix"></div>
 </header>	
 
-
+<h1> Hello,Welcome to my board !!!</h1>
+<p> you can give me some discussion~~</p>
+<p> -------------------------------------------------------------------------------------------------------------------</p>
 
 
 
 <% @jobs.each do |job| %>
-  <h3><%= job.title %></h3>
-  <p><%= job.description %></p>
-  <h5><%= link_to "Edit Posting", edit_job_path(job)%></h5>
-  <h5><%= link_to 'Delete Posting', job, method: :delete %></h5>
+  <div>
+
+  <h2><%= job.title%></h2>
+  <h5><%= job.description %></h5>
+
+  <p><%= button_to "Edit Posting", edit_job_path(job),:method => "get"%></p>
+  <p><%= button_to 'Delete Posting', job, :method => :delete, data: { confirm: 'Delete?' } %></p>
+  <p> -------------------------------------------------------------------------------------------------------------------</p>
+  </div>
 <% end %>
